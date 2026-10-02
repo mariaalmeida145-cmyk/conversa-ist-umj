@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conversa Aberta sobre ISTs | UMJ</title>
+<style>
+:root{
+  --navy:#174579; --blue:#1f73a8; --teal:#18a7a0; --yellow:#f6c84c;
+  --coral:#ef7067; --cream:#fffaf0; --ink:#18324a; --muted:#5f7180;
+  --card:#ffffff; --line:#dce7ec; --soft:#edf7f7;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6fafb;color:var(--ink);line-height:1.55}
+header{background:linear-gradient(135deg,var(--navy),#0f5f91);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 4px 20px #153f5b22}
+.nav{max-width:1180px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{height:64px;width:auto;border-radius:12px;background:white;padding:5px;object-fit:contain}
+nav a{color:white;text-decoration:none;margin-left:18px;font-weight:700;font-size:14px}
+.hero{max-width:1180px;margin:auto;padding:64px 22px 35px;display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center}
+.eyebrow{font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--teal);font-size:13px}
+h1{font-size:clamp(38px,6vw,68px);line-height:.98;margin:12px 0 18px;color:var(--navy)}
+.hero p{font-size:20px;max-width:650px;color:#466170}
+.btn{display:inline-block;background:var(--yellow);color:#18324a;padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;margin-top:10px}
+.illustration{background:var(--cream);border:2px solid #e8ddba;border-radius:34px;padding:12px;box-shadow:0 18px 50px #173d4b15}
+section{max-width:1180px;margin:auto;padding:55px 22px}
+.section-title{font-size:36px;line-height:1.05;color:var(--navy);margin:8px 0 10px}
+.section-sub{color:var(--muted);max-width:720px;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:23px;box-shadow:0 10px 30px #18384b0d}
+.card h3{margin:8px 0;color:var(--navy);font-size:21px}
+.icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:29px;background:#e9f7f5}
+.visual-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:25px}
+.visual{background:white;border:1px solid var(--line);border-radius:24px;padding:18px;text-align:center}
+.visual .emoji{font-size:46px;display:block;margin-bottom:7px}
+.tag{display:inline-block;background:#eaf2fb;color:var(--navy);padding:7px 11px;border-radius:999px;font-size:13px;font-weight:800;margin:4px}
+.alert{background:#fff4d1;border-left:7px solid var(--yellow);padding:20px 22px;border-radius:18px;margin-top:25px}
+.danger{background:#fff0ee;border-left:7px solid var(--coral)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:25px}
+.step{background:white;border-radius:22px;padding:20px;border:1px solid var(--line)}
+.num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:white;font-weight:900}
+.myth{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:24px}
+.myth div{padding:20px;border-radius:20px}
+.no{background:#fff0ee}.yes{background:#e9f7f5}
+.quiz{background:linear-gradient(135deg,#e9f7f5,#edf4ff);border-radius:30px;padding:30px;margin-top:25px}
+.quiz button{border:0;background:white;border:1px solid #c8d8df;border-radius:14px;padding:12px 15px;margin:5px;cursor:pointer;font-weight:700;color:var(--ink)}
+.quiz button:hover{transform:translateY(-1px)}
+.result{font-weight:800;margin-top:12px;min-height:24px}
+footer{background:var(--navy);color:white;padding:42px 22px}
+.footer-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+footer a{color:#ffe07b}
+.small{font-size:13px;opacity:.86}
+.search{width:100%;padding:15px 17px;border-radius:16px;border:1px solid var(--line);font-size:16px;margin:18px 0}
+.ist-list{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.ist{background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px}
+.ist strong{color:var(--navy);font-size:18px}
+@media(max-width:850px){
+ nav{display:none}.hero{grid-template-columns:1fr;padding-top:38px}
+ .grid,.visual-strip,.steps,.ist-list{grid-template-columns:1fr 1fr}
+ .footer-inner{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ .grid,.visual-strip,.steps,.myth,.ist-list{grid-template-columns:1fr}
+ h1{font-size:46px}.section-title{font-size:31px}.hero p{font-size:18px}
+ .nav{padding:10px 14px}.logo{height:55px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALkAAAB9CAIAAABxtlWpAAAaeklEQVR4nO2deXQcx3ngq/runvvCAAMM7pMneIunREmUJVqSFWptPR9KbGdzKV7v29Xa3rfJJk6cPK9e/DYvTl6S5yO7juN9TmTL0WGLsiRblKiDEilSJMETxDG458DcM31N1f4BEaSI6Z4BpgcYEP178wfQU11V3f3N91V99dXX0Ln/q+BD8PU/ICjJfJEbJ5VxVjkYVc/Cq9A+sPDKbzoC9cs4bTxBaNaj13w5FDmpavenFNTiTl5YZBWKyDxLE5EbFUNAEsS8oGg0tZjrqiXJWHg6UbKUiQ4UuYZu4Bq61GpAkkb97lcBVOkiwDjduAyjHKx1QN/Q4AVHFtSzoGYAAPmhXtEZ+ej0WecQXvjdYqiK5TL1SkWQxBq6gWvoUg0HQmjYiHw1oGuDDDc9839Veou1z19geubRneNomh6gfYQiyQU9qdD0LKae8qo2ph4IgKlXKoEk1pJWMWWlEtbUYAUAQOnOTRYzql9IkSnEUqpZNg8s0J09LWyNWJReqV0/23w1JS5+bf0yjIVcS444YMrKkllrkyDwkXlQkUuvzPTo1VxWRSUPzLPIWc+Cistq6qOOqTIvqnZNj/acVKNiU68skcUNVm4LTFlZImttwgwAoIwfRRtVj7bNWOKsR3tlZwlxJ2TRWAS9imrRvbYoTL2yREwbZFIua24WVG5Mgg7Vi4urbNajU41uU+VeDkkubKrYytcSqSHTM39axbJSDI6hXHaBY+lFDAANkrliD/DGd2VVUB52C6tb1pQVXdobPb/14I7D+9Y117sMrLZWMW1QUfSDwwCwW9g//d37P3P/tjU44ls7GKBXNnY2/Ms3Hq/32iqvyqSWqVRW+nsan37q83YLZ0hvTGoZ/bi4Eis7Qb/zR3/x+JoUlLVoaivyr3zrv3zC67QY1RWTGmfpsnJ4b99d2zoN7IpJjVPMBpXn6vjSYwcM7otJbbNEvdLoc2zrazK2KyY1zhJlpb+n0dh+mNQ++nFxmrQGPMb3xaS2WaJe8ToFY/thUvssUVY4lja2Hya1D2VckhyT2xwz1smkXExZMSmXxa4dmgZr7VKVuDiT5UeW5VeOn379g1BoJgUhDNbZ92xsvGf3ZovFsBmrKSu3A+OT01//zitvX44nc0iSCwAAlkk/d2Jq5+tXv/a5fX3d7Ya0UqasmKandkkkU1/59tHXzsclBc0fzIlqTgRH34/lpWNPfYltDRrgZzfHtquef372+HuD6ZsFZR5ZQe9cTf/whXcwrjBZIQCmrKx2MpnsK6fGZtOyVoF0Vnn/cmxwaLTytvRlBV7/aB5Yk9TQ9V8ZDs1mVP0y4ZQ6PDZTeVumXlndpNI5pZj1uRlJhdm8VHlbpqysbqwCT1ElHiJNAp5jKm+rWDMQfvi5caSILTKpBVqD9X4no78tq95JtTbVVd6WqVdWN16P+/6dzR6bpu/DbaP3bfR3tAYrb8uUlVXPkUM7juwOOCxFxMUhUA/v8D9671aaNiCG5KZcPYtJF2fAbN3EILwe9xOf2utzvvfymehAKJ3JqQAAG0/3NFnv3ep55MCm1mZjIqNNH//tQLCx4fcfu/dA/9DoVCyWyAAAPA5LsMHT29lqtxu2d9iUlSWAa3BwLwjC9i0btm8BiqIAAAwxOrdALcyZthCdbGwmtUY1pGQOU6+sYha1ylN50rLllpWR0Phf/8uxX52bLVnSaeN/52Mtv/nooTJrvnhp8Fs/PvHu5eI1k5D42/+8b/+uzQu/unBp8Ovfe+3iRL7MhgAAv31/xxce2edwOMo/JRyJfeqPno6llTLLb+pu+Pv/ekiniaGR0FP//Nqvz8VLVmUX2CcON3/xscPl9lUDammmZ8nzIALCdF6ZmNVc65onr5KprFh+zbKqxJKSVs0kBKJU/DnJqjITF8vp0jwvno49fCCxKFl5+a1zw2ExnS+UWb4hqSCk57ynKCovFaKpEotBAAClQKazq9DH3xxs3N/fWOdZ3Wk4Tl+Jjc3M6j/Lm8EYHz05lpeNdDU0NwXu7A/Ue/iSJRHGGBrwoFfAF3d4f/8dnZZVnXdaLaBX3h3OZDJllh8OTQxci6uFcmWrTB4+uH1Hu0CVepcrxhgZIaXEwiiD+SP4+uf6+hC86cjS8df5Hr2zp62+9A+ilnnlbCKZKldWXj1xISUZ77/0eT2fPNjbUlfiTmIMCkaI6cr4+A/t3XJgncvCkSvSuiFcGY8PXJssFEqPP0RRPPbBVCpvsFKZ49C+LXducAms3p1EGJdvLnVYGVnhOO7xj2/pCvCrN28lxuDZ40OSVHrMeOHK8OBExnADNAfLsp//+LauBr07iRA2QlQAcbNZuW564NyniOlZEK2wZDb1dX/yQIt9NauW1wZi4Wjpyf+x9wejmaoIyhwb+ro+fbBN505iAMrRfyVZsXVmCOGRe7bb+dWqVwAAM7Hc8dPX9NX7bDx+8nIkmS3XrbI0Hr1vh8emKSsIGTO4XcmYBJ/XTRGre8X66TdCqqrn4Th7cXg4LBYMmYdo43G7rBylpe8NEhVAFJ3j3DoPul5o/ojJHCevzA4Oj2t9izE+cX5kara0u6xySFJ3eGvE+p0Z61QCCAFDaz6GvKQ+++ZlrXWZicnp86PJVL64AaIMfQ0rpS0qCGGEceVbhExZKYHbxjxwR9Dt0PRh/OTYmNbIceBqaHBGLvqMaAoeucuYraNzUITei10RQgbIip7DrXSM9u0PAVGbl93ebdcqMDKTfvPkhYXHC4XC2cHJULj4kpaFIX9jd4thvQSA0H0JPUKmXlkW/E5ud5fzo8du3HeMwU/eGFx41khofGAkmZeKDFYgBAf6Az6HAfsw5tF/sThCBrjjTFkpjZUjN7T7G32a2eR/8c5kLndrSMOloYlLM8VHKhCAI3ubjVXQ+utrCCMDZMWc9ZQGo+aAd3OrZiKTRFY8evzMzUdkWb40GhmaKL5g5HNwh/YWiaSpBEpXWEy9snwEGxu2dbm0Zi4Yw5++Hbr5YYyOTZ4ZTmj59R/Z08SyRhogAACha4MwIMzxyjLBcdy6Fl97g1WrwFunpyamwnN/Y4yvhabOjRYf1TI0+al7eg3vIVXKv4Iq9scR83Mb3VkPXPBZc/R2BNc3sVrf5mT03Otn5/7OZrMXRiLjkWzRkutbHJvXdRnePUJ3YQ0jXPmSkKlXyqWxwb+xzWEvtr0PAKAi/MI746IoAgAmpsInriS1fsefOdhSjXc7Q92IpzlvXIVNmLJSLhRF9Xc3tfuLO+UwBlfGUh9cvIYQCk1GTw+lihbzOPj7966vhqxQNKFTLTYihOWGrNw06zEtTnHWd7f2NHJakSJ5Bb/w5qVUKn36ynQ0UXywctcmb32dtxp9IxlC50EVEEamXllOvB735g6Pxz43hbn11ksKev1c9Oro5LGB4vswIASfurNT38G6ZGilALX9GxgAc868rEAId25ob/YW39iHMRiLiN//+YUPhhNFC/QEXVvXtVbDAAEACIR1XGGGhFHekJX5mVCFNd7erOtq66oXaI1USsmc+sKJ8ZxYPAjhwZ11Vmu1XiVK6fptCwBWHp5t6pXFwXHcHesavPbinjSMgZagMDT54L6eKm421glKAAAiwrRBK8Cerd111kVr393rfI11nioNVgAAJNTbsYxQ5UNbQCxxsrMclqpGV6I625r7WhysdgBUUR7YVmdgavyF5JDegAWSsPItE7WrVwoFLCvLEX24BA5uCTqtRPnS7LKx+/rbWVbT7VshGOPQVE5nQMLRkOcr3Re8wrKiM5SW1UJOXIRbGiFc7RDoeQ7sWOcRFqFX7tzs8zhtVZoBAQDCkdjgeELLUwwhsHO03aa5mFUm5clKEeecAZcNIaS1Nbkoq7NpUZbLTV8gSnLW0M3lOvjrvDt7fRxTlriQBLx7o8/h0IysqxCM8QvHzqREzWu3CbTfI1Q+rF5JvQIhtFtoLTuKMQgnpemZSJm1pbPibMaAHVNlcnhPp6U8k9IWsG3qCnBctVJDhMYn/+3YcEbStEAeO90ScFfe0ArboAavldDWzKGYcnVkspx6FEWZiqXDyUXka6mQO/p7mr18OVblwHqX31et11nPhCP/+NO3L45ndUIOGp1kb1ug8raK5s0uanGqsjDUUW/VyRA+EpHevTieTpdORzATjp66EhOLBbdWCavVcmh7gKFK3BO7hd7d63O7nNXoQ2hs4p+efeuZtyYz2imAeJbsa7K1Na/+9wdt7qrTmXtmcuorpyMnzlzU39sny/L7F4ZeP196a7GxPLivT2BLyEpvo6UjWGe4Cy6dzvz6zVP/+0dv/ODlUCSptwG2wUEf2NJmiAVc4dyCOzd2Oiwn06JmtoHzoew//Ps5lmF2beljmCLeUkVRTp69/N2fXw5FF5HwzRB6O1s3d7iPnY1qubkgBHd0O5sb6w1pDmOcSqVPD1wdnoiduRp5fyg9FBbzkt4QjaWJLR32PVuNCcO7SVaK/EIWk0p7SdT5PPs2+p9+PaTlG1BU9OblVPT7b31s+/B9u3rWdbUKwocRJIqiXBoc+eU7l59/e/zC+HILCgCAougje1uOn4upGsJS7xY2dfqczkWkldMBQjg5E/3GD09NxeXZjCorpQfyDS760/etdxlkAVdYr0AIP//AhufeGs/JmsN4WSmcG82NRkZ/+saYnSO8Dk7gKEkuxFL5RKYwmwfxTHWzEOhw/75Nf/6j89Fkcb24Psj1tjUY6NenKaIA6el4upzCVp46sj+4Z+s6o1pf+fy2W9Z3Ht7V9JM3QvrFUjk1lQMAAIKQCAgxXj7Pmw4et+vebQ0//tXIwq8oktjcam834gUb89itls3N/NlrpUuSBNzV5/qD/3DAwLk6VZ7pqSI0Tf/JFw+8PvBMeDZXTnmEMFrWpaKbd1DNH7n+F4S/9/CmehuzMJrV4eDu2tJsrFvFZrNu7vT+8NcTJUt2BWx/9cS9HrfLwNZXXq8AAJoC/r/7T3s++5e/UtQq5j+qEpt6OzdovADZ8FVlnue7gl6HlU1m9HKPtflt/+d/3NfS1GBs67WydnjP7k1/9+U9fHle85oCQkhqUI0FII9D6AlqvrqDIOCmDvfPvvlwT4fxuwVulpWVjMSGED56aMf3vnKg2ctXkpiEJCDPEHQpF1k5PdJO5rqSOB323voiiwsQAhtPfObuluef+qRRs/RbqAkbNAdBEB/b19/R5PnW/3v7jXPhRKYgLcYkMTRh58kNrbb7tgfPX4seOx+djkvVSf64kricjvWtToKYnHfqEwR08ERHwPrlRzc/cGCrfoKnSqghWQEAEATR3d7yN0/WvfPB5WdeHTgzlEjkUUbEWbFQdG8wQ5MWlrSwwCmQfUHb4b2d+7f1uV1ORVF+efz9H7w4cGY0G00sItF+7cPzfLPf4XNykYRo4UiXQLT5hQfvaD5y306nw169sAfwkXfY1Qw8zx+8o3//9g1jE9PvXxy+EoqGplLxtCipWC0gjAFJQIqALEv4HEJzvb2zybOxu7klGJj/SdE0/fGDu3b39/zbSyd+/k7o7Gg+p5GICwAgcNy6ZhtLzxm+W++Gy8Z4XZVGfiwEQmjh2R3tmpFyvQGGoor/kpsDvsNbvTOz6Z6gc9eG5p2bux326krJHNB19x8v4bRv/uHhLzy0w/De6CCKYiabkyQZY0xRJMeyNpu1HH175drIz351ZjqS/t1H9/T1dBSteXI6LElz6ufWO06SZJ3XbZTv9ZZ2R8Y0V9F5jg02FvfjybKcTKUFnrNYqrUroCi1ZYN04Dhuab6K7o7Wr3W0IoS0ZrAcx7W3Nl//b/m0LMdxvV1LSRnHMIzPW60gBx0WKSvVV3RVopSrY7Ve13JSK/4Vk9rHlBWTcinPBq1a01OK2/W6qoKpV0zKxZQVk3LRtUG3m+m5zS5nGYEAmHrFpHxMWQEAAEVRkslUIpmcSw6oQ6FQUFW1ZJ4+VVVFUZxL/agoiiiKt5wiimIimVxCPxPJ5C19SGcymWz25vrT6XQ2WzwLZiVQNwzNfGO3iekp9ypS6fS7Q+Pn06KIQRtHPbi+wyIIc7d+fpFl/t/B8QkZ4Q5/3VyIOMZ4rgxCCMIbb9oYHp+4PJvc3FAXbKg/PzQymRX3dbY47Pb5J3p2ZPx0Wvm9HbcuHdzS7nwTc8dHpmeOjoQf6gjEsrk2n8ftdGCMn78YslnYe9sCPM/P9eTolRBPwgf71839u/SQq4/ewlXj468SCKEXz1/7dZ7YThcaGfJ4LLs7lY6n0tfCswCAVo/DZbefGR6nSaAUUJPbeXRwapyyPJST3RwLAA6n03v7ui+PjEbyEkOSnX5vQ50PADAdT55OKc2WdLChfiieupDHjdMRdSKcVxVRUTcGG2wc55DI4YmZQkFpDdSPzUQwBgxFhGKzCIH2Og+AMJzI5GSxyeOajidljG007XbY7axwZnr2pQQ+lJzY2pCLZvMxgm4GiCTJ9y4OCQyZkEQHx/IEzGZzF0NjSUlxcUxHoN5hr3RD9VqXlVQm81Y8d7ebf7h/A8dxjygKQugbJwchQUCEQCZx2Cf92Qzaz+MxUe5NR2YhOSwXLsTTIZSdYR1cUrLYpv9vtOBJJ0WG98bHv2y1CgK/MN3GiZn4MWDtltIDkL9HnWphiJfyLDEde38284cM/dxIBEJA0+S4jEVAtOfCLhL8LE814cJdRPb7MXILkW9k8A5KfCGRP+SgJgr4QkqyceRAShopwFN51h+O/a+I3MSx3nyOBFggYV6WnksWrLks4oS96eHD/esq3NK21scrsqIqAAoknLuPNE3PxBNH88QGG9MrkNckFFGBM5/+j93+PYws53NNNLzTAj7RExQUyZJPf2V94NVYtk4V//y+3b/f7T+lkOPRGAAAQogJUkUIAFBAGECIAbAh5ck71j1sRe+mFYwxqSob3UKG4o5PRBMI2El4JY99BO5k4UWVzANSVNEXA8IGpyWIZR8N61iiUFDofKZToLaz6JEWbx3HNAjMfjc/q6ihZErBoFVKfqm/AwGcw/iNlLqVVP7s4NZ+unA6JSXL2Oqrz02yYuALdVeSxUU6Om3WNga+m0XvXb56cWj4R2+ejEsqBYmxdF4S8/0csEJEF0SXVeAwghgDjJMFFE2mEUGsZ1GD1+3EhbiKQ1MzE/EkCSBHUwAAhyBIAJ6Jps4PDp3Nqh6GYAjoIABJEHaIPgzbQoV6l7OHg0dzBK/ke+xMQVXjogwUeSOtchAFSdQdbLSyzE4LLhTwTxMooWKMMcRYxCAiKq9MJi5lFCArQFXVAgIQ7/RwDpsVAAAx5AgQkQuj0zNxpUCXSij3kTuncQvXul5hGOY3uhvrKOIXcfXH09kxgqu3Cb/D50VAhhHZIdABC9cq0CRJugQuYOG6nRaZpM8lck6e83MMhPDjQa+PpX84Ensjgx+xqAGfFwDQGqjfwYNhgn86LLK8sMdra7RwTSxBkqSL59pYwsExLQy022zb7bQHKbu8tvVNgbtsBMuwKUB2WzkfS7ZSGEKYk5WYikSC6oCqi6HaBLrebnUy5IAE7BaeJMmogto40smx7SR2sCyEsIGjWwTqsE/IM8KPx1M5mrvbb7NbK43Ygq57/ucSTvvmEw8sc6xT2SxaL2KMI7FYeDauFpDHaW+qr8/mciMTk2oBNXg9dqtlMhxpCzYlkklJViwCPx2NsTQNCULgWI/LBSGcmJ4Jx+McTbcEGgThw1C3dCYzGY7kJdlltwXqfJlsNiuKgbq6dCYTT6Vcdns8lWptasrlctPRmN/jtlgsyVRqMhJV1UKgzktAIpXNNgcaJEkanZzKS7LHafc4nFORSKO/biYak1XVKgiJdBpgTBBEoM43HY0FfF6LxTI5M0ORlNvpGJuaTmayTps1UOcruht8UXduybJy+AsPbV/CiVVjtZvOaoExxhgXmTYv/oat9XlQUTDGz50eYCny/k19GOPhicmTE5G9rYFGf93Cwi8OXB3OKU/sKLJteGhs/PjYzExesbLUXU3+rqYGrRBaAEAylZqOJ312W5nJWgYGhyKitLGx3uPS3FyIMT51afC12ezjvc1+T6WpnUxZKc7LaXQmjzrck3aW+e61xFBW7nQmfS5nOp8XWJbnuLwoUiSZyuW7vG6/JAMAEELheIJnGMf1LH5jsfgpEfohEcP0f7uW+jZFtjc2zKZSilqo97gxxqIkAQDS+bxdEAYnp1+MifvsmX02K0EQM7Nxh8Ui8BwAIJnJqAXk+WjGucsz0csK9FtSVkFgGEZRFIQxx7IIoYlIzG2zWgRelCTKYj3E83VGbFZdrKzUiKqvejcQgA1Oy1PDySMe9m1AbbBwk6L67FsDbwKrQICvutXnx+MJl/98Vv68x3EpPdvmsDw5MDWpAAbhxwT1s7s2AAAQxl4CP1jvXNfZ/vgrZ66luH+dvPpqDpEQ9tHTX+3w/vfzU1nempSV7ZTqZcjnJfadBImvjjwXzoUZLiLHvl5PpQqFb8ewk4D3WCZ/u/9GJhWMMcLw6eGUbTTy2fWtP7s8ElXB53qCX76SQAQhy+EnA+yxpHJSpuxA/WJ84IEtGyq8c6ZeKQ4B8Cd45SUF/MN0/jEHMaWQPpb+rR73/VnxmenMhXg+A0lFFp/eWP/y4BgC1L9eGHEoxHf39b13Zfh749mdobGu5iAAIIrJV6OZl+IXk7SQhsybkvTMtgDHMH/w7rXnh6Z5iI/wcsAJ/z2qehXpIRIetNPjCUXgrX/s5z9IST9IoFasdmL0RIu7ye1c2E8E4IcTcAwwAN8Znd1Bgz/a3T0Vm3XbrN2J1MeSmeNx9b2p2UMbVR0LWN49MdGAU6SvBS130/IeGwUgPJGQ/2Yo9fpUfDYvSYqCAbibUb0OG0YFAEBcVhooVZZlHiIHw+TyH+YOEhEey4i0lP+rdisvpvykCjBSFLkRKklFpXDBw0AWAgvEcw9bQSijosF84TujiVMJsZMq/Ganv4HGXxtO/ePZEQAAQiiTzSZTKREhTBAkBAqk8rKUQxADMAuoIClLkmRj2cGJqScvRD+IZabTWQQMeOfu/wcLZJzH1zNW5AAAAABJRU5ErkJggg==" alt="Logo UMJ - Centro Universitário Mario Pontes Jucá">
+    <nav>
+      <a href="#entenda">Entenda</a>
+      <a href="#sinais">Sinais</a>
+      <a href="#prevencao">Prevenção</a>
+      <a href="#ajuda">Onde buscar ajuda</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="eyebrow">Projeto de Extensão • Enfermagem • EJA</div>
+    <h1>ISTs sem tabu.<br>Informação que cuida.</h1>
+    <p>Uma conversa simples, visual e acolhedora sobre infecções sexualmente transmissíveis: como reconhecer sinais, prevenir, testar e procurar ajuda.</p>
+    <a class="btn" href="#entenda">Vamos conversar →</a>
+  </div>
+  <div class="illustration">
+    <svg viewBox="0 0 620 430" width="100%" role="img" aria-label="Ilustração de adultos conversando sobre saúde sexual">
+      <rect width="620" height="430" rx="28" fill="#fffaf0"/>
+      <circle cx="115" cy="115" r="65" fill="#f6c84c"/>
+      <circle cx="510" cy="90" r="48" fill="#dff2ef"/>
+      <path d="M0 335 Q150 270 310 340 T620 320 V430 H0Z" fill="#e8f3f7"/>
+      <g transform="translate(75,120)">
+        <circle cx="95" cy="55" r="42" fill="#9b623f"/><path d="M55 53 Q95 5 135 53" fill="#39291f"/>
+        <rect x="55" y="100" width="80" height="115" rx="30" fill="#ef7067"/>
+        <path d="M58 130 L15 180 M132 130 L175 178" stroke="#9b623f" stroke-width="20" stroke-linecap="round"/>
+        <circle cx="82" cy="57" r="4" fill="#18324a"/><circle cx="108" cy="57" r="4" fill="#18324a"/>
+        <path d="M82 76 Q95 84 108 76" fill="none" stroke="#18324a" stroke-width="4"/>
+      </g>
+      <g transform="translate(340,115)">
+        <circle cx="95" cy="55" r="42" fill="#c98562"/><path d="M52 55 Q95 0 138 55 Q120 20 95 20 Q70 20 52 55" fill="#5c3b2c"/>
+        <rect x="55" y="100" width="80" height="115" rx="30" fill="#1f73a8"/>
+        <path d="M58 130 L15 178 M132 130 L175 175" stroke="#c98562" stroke-width="20" stroke-linecap="round"/>
+        <circle cx="82" cy="57" r="4" fill="#18324a"/><circle cx="108" cy="57" r="4" fill="#18324a"/>
+        <path d="M82 76 Q95 84 108 76" fill="none" stroke="#18324a" stroke-width="4"/>
+      </g>
+      <path d="M265 105 q35 -35 70 0" fill="none" stroke="#18a7a0" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="300" cy="78" r="10" fill="#18a7a0"/>
+      <text x="250" y="145" font-size="18" font-weight="700" fill="#174579">CONVERSAR</text>
+      <text x="251" y="168" font-size="18" font-weight="700" fill="#174579">TAMBÉM É CUIDAR</text>
+    </svg>
+  </div>
+</section>
+
+<section id="entenda">
+  <div class="eyebrow">1 • Primeiro passo</div>
+  <h2 class="section-title">O que são ISTs?</h2>
+  <p class="section-sub">IST significa <strong>Infecção Sexualmente Transmissível</strong>. Elas podem ser causadas por vírus, bactérias ou outros microrganismos e podem ser transmitidas em diferentes práticas sexuais.</p>
+
+  <div class="visual-strip">
+    <div class="visual"><span class="emoji">🗣️</span><strong>Converse</strong><br>falar sobre saúde não é vergonha.</div>
+    <div class="visual"><span class="emoji">🔎</span><strong>Observe</strong><br>algumas ISTs não apresentam sintomas.</div>
+    <div class="visual"><span class="emoji">🧪</span><strong>Teste</strong><br>quando indicado, a testagem ajuda a descobrir.</div>
+    <div class="visual"><span class="emoji">🤝</span><strong>Cuide</strong><br>tratamento e acompanhamento protegem você e suas parcerias.</div>
+  </div>
+</section>
+
+<section id="sinais">
+  <div class="eyebrow">2 • Fique atento</div>
+  <h2 class="section-title">O corpo pode dar sinais — mas nem sempre.</h2>
+  <p class="section-sub">Feridas, verrugas, corrimentos, dor pélvica, ardência ao urinar e lesões na pele podem acontecer em algumas ISTs. Mas uma pessoa pode estar infectada sem perceber.</p>
+  <div class="grid">
+    <div class="card"><div class="icon">🩹</div><h3>Feridas ou lesões</h3><p>Observe mudanças diferentes do habitual na região genital ou em outras partes do corpo.</p></div>
+    <div class="card"><div class="icon">💧</div><h3>Corrimento</h3><p>Corrimento fora do padrão, especialmente acompanhado de outros sintomas, merece avaliação.</p></div>
+    <div class="card"><div class="icon">🔥</div><h3>Ardência ou dor</h3><p>Dor ao urinar ou dor pélvica pode ter várias causas e precisa de avaliação profissional.</p></div>
+  </div>
+  <div class="alert danger"><strong>Importante:</strong> não tente descobrir sozinho qual é a IST e não se automedique. Se houver sinais, procure um serviço de saúde.</div>
+</section>
+
+<section>
+  <div class="eyebrow">3 • Conheça alguns exemplos</div>
+  <h2 class="section-title">ISTs não são todas iguais.</h2>
+  <p class="section-sub">Cada infecção tem formas próprias de diagnóstico, prevenção e tratamento. O profissional de saúde é quem orienta a conduta adequada.</p>
+  <input class="search" id="busca" placeholder="🔎 Digite uma IST para encontrar..." oninput="filtrarIST()">
+  <div class="ist-list" id="lista">
+    <div class="ist"><strong>HIV</strong><br>vírus que ataca o sistema imunológico.</div>
+    <div class="ist"><strong>Sífilis</strong><br>infecção bacteriana que pode evoluir em fases.</div>
+    <div class="ist"><strong>Gonorreia</strong><br>infecção bacteriana que pode causar corrimento e dor.</div>
+    <div class="ist"><strong>Clamídia</strong><br>infecção bacteriana que muitas vezes pode não causar sintomas.</div>
+    <div class="ist"><strong>HPV</strong><br>vírus muito comum; alguns tipos estão relacionados a cânceres.</div>
+    <div class="ist"><strong>Herpes genital</strong><br>infecção viral que pode provocar lesões.</div>
+    <div class="ist"><strong>Tricomoníase</strong><br>infecção causada por um protozoário.</div>
+    <div class="ist"><strong>Hepatite B</strong><br>infecção viral que pode ser transmitida sexualmente e tem vacina.</div>
+  </div>
+</section>
+
+<section id="prevencao">
+  <div class="eyebrow">4 • Prevenção combinada</div>
+  <h2 class="section-title">Não existe só uma forma de se proteger.</h2>
+  <p class="section-sub">A prevenção combinada reúne diferentes estratégias. Cada pessoa pode conversar com a equipe de saúde para saber quais fazem sentido para sua situação.</p>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h3>Preservativo</h3><p>Use preservativo externo ou interno nas relações sexuais. O SUS disponibiliza gratuitamente.</p></div>
+    <div class="step"><div class="num">2</div><h3>Testagem</h3><p>Faça os testes recomendados pela equipe de saúde, mesmo quando não houver sintomas.</p></div>
+    <div class="step"><div class="num">3</div><h3>Vacinação</h3><p>Verifique sua situação vacinal, especialmente para HPV e hepatite B.</p></div>
+    <div class="step"><div class="num">4</div><h3>Prevenção do HIV</h3><p>PrEP e PEP são estratégias do SUS para situações específicas e devem ser orientadas por profissionais.</p></div>
+  </div>
+
+  <div class="myth">
+    <div class="no"><strong>❌ Mito:</strong> “Se a pessoa parece saudável, não tem IST.”<br><br>Algumas ISTs podem não apresentar sintomas.</div>
+    <div class="yes"><strong>✅ Verdade:</strong> “Testar e conversar com a equipe de saúde ajuda a cuidar.”<br><br>O diagnóstico permite orientação e tratamento quando necessário.</div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">5 • Situação de urgência</div>
+  <h2 class="section-title">E se aconteceu uma exposição de risco?</h2>
+  <p class="section-sub"><strong>PEP</strong> é uma medida de prevenção de urgência para reduzir o risco de infecção pelo HIV após determinadas exposições. Deve ser iniciada o mais rápido possível e, para HIV, no máximo em até <strong>72 horas</strong>.</p>
+  <div class="alert"><strong>Não espere aparecer sintoma.</strong> Procure imediatamente um serviço que ofereça PEP e explique exatamente o que aconteceu. A PEP é gratuita pelo SUS.</div>
+</section>
+
+<section id="ajuda">
+  <div class="eyebrow">6 • Onde procurar ajuda</div>
+  <h2 class="section-title">Você não precisa resolver isso sozinho.</h2>
+  <div class="grid">
+    <div class="card"><div class="icon">🏥</div><h3>UBS / posto de saúde</h3><p>Procure a unidade de saúde para orientação, vacinação, testagem e encaminhamentos quando necessários.</p></div>
+    <div class="card"><div class="icon">🧑‍⚕️</div><h3>Equipe de saúde</h3><p>Enfermagem, medicina e outros profissionais podem acolher suas dúvidas e orientar o cuidado.</p></div>
+    <div class="card"><div class="icon">🔐</div><h3>Respeito e sigilo</h3><p>Buscar atendimento não é motivo de vergonha. Perguntar faz parte do cuidado.</p></div>
+  </div>
+
+  <div class="quiz">
+    <h3>💬 Vamos testar seus conhecimentos?</h3>
+    <p><strong>Uma pessoa pode ter uma IST sem apresentar sintomas?</strong></p>
+    <button onclick="responder(true)">Sim</button>
+    <button onclick="responder(false)">Não</button>
+    <div class="result" id="resultado"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h2>Conversa Aberta sobre ISTs</h2>
+      <p>Material educativo desenvolvido para uma ação de extensão em Enfermagem com público da Educação de Jovens e Adultos (EJA).</p>
+      <p class="small">Este material é educativo e não substitui avaliação individual de um profissional de saúde.</p>
+    </div>
+    <div>
+      <h3>Fontes oficiais</h3>
+      <p><a href="https://www.gov.br/aids/pt-br/assuntos/ist" target="_blank">Ministério da Saúde — ISTs</a></p>
+      <p><a href="https://www.gov.br/aids/pt-br/assuntos/ist/prevencao" target="_blank">Ministério da Saúde — Prevenção</a></p>
+      <p><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/aids-hiv/pep" target="_blank">Ministério da Saúde — PEP</a></p>
+      <p><a href="https://www.gov.br/aids/pt-br/assuntos/prevencao-combinada/prep-profilaxia-pre-exposicao/prep" target="_blank">Ministério da Saúde — PrEP</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function filtrarIST(){
+  const termo=document.getElementById('busca').value.toLowerCase();
+  document.querySelectorAll('.ist').forEach(el=>{
+    el.style.display=el.innerText.toLowerCase().includes(termo)?'block':'none';
+  });
+}
+function responder(ok){
+  document.getElementById('resultado').textContent = ok
+    ? '✅ Isso mesmo! Algumas ISTs podem não apresentar sinais. Por isso, testagem e acompanhamento são importantes.'
+    : '💡 Quase! Uma pessoa pode ter uma IST mesmo sem perceber sintomas.';
+}
+</script>
+</body>
+</html>
